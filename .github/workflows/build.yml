@@ -1,0 +1,36 @@
+
+name: Build mod jars
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { mc: "26.1.2", api: "0.155.3+26.1.2", range: "~26.1" }
+          - { mc: "26.2", api: "0.161.0+26.2", range: "~26.2" }
+          - { mc: "26.3", api: "0.165.0+26.3", range: "~26.3" }
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v6
+      - name: setup jdk
+        uses: actions/setup-java@v5
+        with:
+          java-version: '25'
+          distribution: 'microsoft'
+      - name: make gradle wrapper executable
+        run: chmod +x ./gradlew
+      - name: build
+        run: ./gradlew build -Pminecraft_version=${{ matrix.mc }} -Pfabric_api_version=${{ matrix.api }} -Pmc_range="${{ matrix.range }}" -Pversion=1.0.0+mc${{ matrix.mc }}
+      - name: upload the mod jar
+        uses: actions/upload-artifact@v7
+        with:
+          name: auction-house-timer-for-minecraft-${{ matrix.mc }}
+          path: |
+            build/libs/*.jar
+            !build/libs/*-sources.jar
