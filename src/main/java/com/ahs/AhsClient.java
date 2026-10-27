@@ -69,7 +69,7 @@ public class AhsClient implements ClientModInitializer {
         HudElementRegistry.attachElementBefore(VanillaHudElements.CHAT,
                 Identifier.fromNamespaceAndPath("ahs", "auction_timer"), (graphics, tickCounter) -> {
                     Minecraft mc = Minecraft.getInstance();
-                    if (mc.options.hideGui || menuOpen) return;
+                   if (menuOpen) return;
                     HudRenderer.Model m = HudRenderer.live();
                     if (m != null) HudRenderer.drawAtConfig(graphics, m);
                     if (AhsConfig.INSTANCE.papEnabled) PaperingHud.drawAtConfig(graphics, PaperingHud.live());
