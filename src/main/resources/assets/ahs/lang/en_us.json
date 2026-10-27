@@ -1,0 +1,7 @@
+{
+  "key.ahs.start": "Start auction timer",
+  "key.ahs.stop": "Stop auction timer",
+  "key.ahs.pap_win": "Papering: client wins current bet",
+  "key.ahs.pap_lose": "Papering: client loses current bet",
+  "key.category.ahs.main": "Auction House Timer"
+}

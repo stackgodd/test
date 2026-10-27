@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "ahs",
+  "version": "${version}",
+  "name": "Auction House Timer",
+  "description": "Client-side auction timer and papering helper for DonutSMP.",
+  "authors": ["you"],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": { "client": ["com.ahs.AhsClient"] },
+  "depends": {
+    "fabricloader": ">=0.20.1",
+    "minecraft": "${mc_range}",
+    "java": ">=25",
+    "fabric-api": "*"
+  }
+}

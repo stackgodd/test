@@ -1,0 +1,16 @@
+-proc:none
+-Xmaxerrs
+1000
+-d
+/tmp/jout
+src/main/java/com/ahs/BidParser.java
+src/main/java/com/ahs/HudRenderer.java
+src/main/java/com/ahs/AhsConfigScreen.java
+src/main/java/com/ahs/PaperingHud.java
+src/main/java/com/ahs/Compat.java
+src/main/java/com/ahs/PaperingState.java
+src/main/java/com/ahs/AhsClient.java
+src/main/java/com/ahs/Fmt.java
+src/main/java/com/ahs/AuctionState.java
+src/main/java/com/ahs/AhsConfig.java
+src/main/java/com/ahs/HudMoveScreen.java
